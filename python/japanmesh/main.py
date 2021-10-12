@@ -153,6 +153,46 @@ def get_meshcode(meshnum: int, x: int, y: int) -> str:
         return ""
     elif meshnum == 4 or meshnum == 5 or meshnum == 6:
         return get_meshcode(parent, math.floor(x / ratio), math.floor(y / ratio)) + str((y % ratio) * 2 + (x % ratio) + 1)
+        
+    elif meshnum >= 11 and meshnum <= 17:
+    
+        if meshnum == 11:
+               divstr = "1"
+        elif  meshunum == 12:
+               divstr = "2"
+        elif  meshunum == 13:
+               divstr = "5"
+        elif   meshunum == 14:
+               divstr = "3"
+               
+        elif    meshnum == 15:
+               divstr = "6"
+        elif    meshnum == 16:
+                divstr = "4"
+        elif   meshnum == 17:
+               divstr = "7"      
+                     
+               
+        return get_meshcode(parent, math.floor(x / ratio), math.floor(y / ratio)) + divstr + format(int(y % ratio),'02') + format(int(x % ratio), '02')
+    elif meshnum >= 18 and meshnum <= 23:
+    
+    
+        if meshnum == 18:
+               divstr = "2"
+        elif  meshunum == 19:
+               divstr = "5"
+        elif  meshunum == 20:
+               divstr = "3"
+        elif   meshunum == 21:
+               divstr = "6"
+               
+        elif    meshnum == 22:
+               divstr = "4"
+        elif    meshnum == 23:
+                divstr = "7"
+
+    
+        return get_meshcode(parent, math.floor(x / ratio), math.floor(y / ratio)) + "2" + format(int(y % ratio), '03') + format(int(x % ratio), '03' )
     else:
         return get_meshcode(parent, math.floor(x / ratio), math.floor(y / ratio)) + str(y % ratio) + str(x % ratio)
 
@@ -214,6 +254,7 @@ if __name__ == "__main__":
         meshnum = 9
     elif meshnum == "5m":
         meshnum = 10
+  
     else:
         try:
             meshnum = int(meshnum)
@@ -221,7 +262,7 @@ if __name__ == "__main__":
             raise ValueError(
                 "メッシュ次数を正しく入力してください あなたの入力：" + str(args.meshnum))
 
-    if meshnum < 1 or 10 < meshnum:
+    if meshnum < 1 or 23 < meshnum:
         raise ValueError("メッシュ次数を正しく入力してください あなたの入力：" + str(args.meshnum))
 
     extent_texts = args.extent

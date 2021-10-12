@@ -9,6 +9,7 @@ FIRST_MESH_SIZE = (1, 2 / 3)
 
 # メッシュ定義
 # メッシュ次数と配列のインデックスは一致している
+#  細分メッシュ用追加   Y.Kayama  2021/10/12
 MESH_INFOS = [
     None,
     {"parent": 1, "ratio": 1},
@@ -21,4 +22,17 @@ MESH_INFOS = [
     {"parent": 7, "ratio": 2},
     {"parent": 7, "ratio": 10},
     {"parent": 9, "ratio": 2},
+    {"parent": 3, "ratio": 10},   
+    {"parent": 3, "ratio": 20},
+    {"parent": 3, "ratio": 25},
+    {"parent": 3, "ratio": 40},
+    {"parent": 3, "ratio": 50},  
+    {"parent": 3, "ratio": 80},
+    {"parent": 3, "ratio": 100},
+    {"parent": 3, "ratio": 200},
+    {"parent": 3, "ratio": 250},
+    {"parent": 3, "ratio": 400},
+    {"parent": 3, "ratio": 500},
+    {"parent": 3, "ratio": 800},
+    {"parent": 3, "ratio": 1000},
 ]

@@ -1,4 +1,4 @@
 import japanmesh
 
 if __name__ == "__main__":
-    print(japanmesh.get_meshes(1))
+    print(japanmesh.generate_meshes(1))
