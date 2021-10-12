@@ -161,6 +161,13 @@ python python/japanmesh/main.py 1
 
 <img src="./imgs/02.png">
 
+
+#### 8~:細分メッシュ
+
+
+- 参考1: http://www.zensuikan.jp/041guideline/02_02guide_05souteizu_denshi_guide1507.pdf
+
+
 ## テスト
 
 ### Python版
