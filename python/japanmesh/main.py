@@ -268,9 +268,16 @@ if __name__ == "__main__":
     extent_texts = args.extent
     target_dir = args.target_dir
 
+    output_file = args.output_file
+
+
     # 保存先未指定なら実行ディレクトリに保存
     if target_dir is None:
         target_dir = ''
+
+
+    if output_file is None:
+        output_file = "mesh_" + str(meshnum) + ".geojsonl"
 
     # 領域が指定されているならパース
     extent = None
@@ -305,7 +312,10 @@ if __name__ == "__main__":
 
     print("writing file...")
     # geojsonl書き出し
-    with open(os.path.join(target_dir, "mesh_" + str(meshnum) + ".geojsonl"), mode="w") as f:
+
+    
+    #with open(os.path.join(target_dir, "mesh_" + str(meshnum) + ".geojsonl"), mode="w") as f:
+    with open(os.path.join(target_dir, output_file ), mode="w") as f:
         f.write(geojsonl_txt)
 
     print("done")
