@@ -1,6 +1,7 @@
 from functools import lru_cache
 import os
 import math
+from latlonmesh  import  getmeshID
 
 try:
     from constants import (
@@ -302,13 +303,37 @@ if __name__ == "__main__":
     for mesh in generate_meshes(meshnum, extent):
         meshes.append(mesh)
 
+
     # geojsonl文字列を生成
     geojsonl_txt = ""
     for i in range(len(meshes)):
+    
+        #x,y=zip(meshes[i]["geometry"])
+        #center=(max(x)+min(x))/2., (max(y)+min(y))/2. 
+        
+        pc = 0
+        xsum = 0.0
+        ysum = 0.0
+        
+        #print( meshes[i]["geometry"] )
+        for point in meshes[i]["geometry"][0]:
+             xsum = xsum + point[0]
+             ysum = ysum + point[1]
+             
+             #print( str(point[0]) + "," + str(point[1] ) )
+             pc = pc + 1
+             
+        xc = xsum / pc
+        yc = ysum / pc
+        
+        #print( "xc yc ==" + str(xc) + "," + str(yc ) )
+        #meshes[i]["geometry"]
+        fcode =  getmeshID(yc, xc)
+        #print( fcode )
         geojsonl_txt += '{"type":"Feature","geometry":' + \
             '{"type":"Polygon","coordinates":' + \
             str(meshes[i]["geometry"]) + \
-            '},"properties":{"code":' + meshes[i]["code"] + '}}\n'
+            '},"properties":{"code":"' + meshes[i]["code"] + '", "fcode":"' + fcode +  '"}}\n'
 
     print("writing file...")
     # geojsonl書き出し

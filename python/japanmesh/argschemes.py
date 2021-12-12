@@ -7,3 +7,4 @@ ARGSCHEME.add_argument('-e', '--extent', nargs=2,
                        help='メッシュを生成する領域のカンマ区切り経緯度（オプション）')
 ARGSCHEME.add_argument('-d', '--target_dir', help='データの保存先（オプション）')
 ARGSCHEME.add_argument('-o', '--output_file', help='データの保存ファイル名（オプション）')
+ARGSCHEME.add_argument('-s', '--set_meshid', help='データの保存ファイル名（オプション）')
