@@ -313,7 +313,7 @@ if __name__ == "__main__":
         #x,y=zip(meshes[i]["geometry"])
         #center=(max(x)+min(x))/2., (max(y)+min(y))/2. 
         
-        '''
+        
         pc = 0
         xsum = 0.0
         ysum = 0.0
@@ -333,7 +333,7 @@ if __name__ == "__main__":
         #print( "xc yc ==" + str(xc) + "," + str(yc ) )
         #meshes[i]["geometry"]
         fcode =  getmeshID(yc, xc)
-        '''
+        
  
         
         #print( fcode )
